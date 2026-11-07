@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}Thank You ♡ | {{ site_title }}{% endblock %}
+{% block title %}Thank You for Being Honest ♡ | {{ site_title }}{% endblock %}
 
 {% block content %}
 <section class="glass-card" style="text-align: center;">
   
-  <h1 class="cursive-title">Thank You ♡</h1>
-  <p class="subtitle">For reading my sincere thoughts with patience</p>
+  <h1 class="cursive-title">Thank You for Being Honest ♡</h1>
+  <p class="subtitle">I respect your feelings and your decision</p>
 
   <div class="glowing-divider"></div>
 
@@ -17,22 +17,18 @@
 
   <!-- Decorative Blue Roses & Lanterns -->
   <div class="final-decor-row" aria-hidden="true">
-    <img src="{{ url_for('static', filename='images/lantern.svg') }}" class="final-lantern" alt="">
-    <img src="{{ url_for('static', filename='images/blue_roses.svg') }}" class="final-roses" alt="">
-    <img src="{{ url_for('static', filename='images/lantern.svg') }}" class="final-lantern" alt="">
+    <img src="{{ url_for('static', filename='images/lantern.svg') }}" class="final-lantern" alt="Glowing Lantern">
+    <img src="{{ url_for('static', filename='images/blue_roses.svg') }}" class="final-roses" alt="Blue Roses">
+    <img src="{{ url_for('static', filename='images/lantern.svg') }}" class="final-lantern" alt="Glowing Lantern">
   </div>
 
-  <!-- Final Heartfelt Message -->
+  <!-- Non-pressuring, respectful message -->
   <p class="final-quote">
-    "Thank you for taking the time to read this. Whatever your decision, I hope we can move forward with kindness and understanding."
-  </p>
-
-  <p style="color: var(--soft-silver); font-size: 1.02rem; max-width: 540px; margin: 0 auto 2rem auto;">
-    Take all the time you need. Your peace, dignity, and happiness will always matter to me above all else. Stay blessed and keep that precious smile alive. 😊🧿💝
+    "Take all the time you need. I respect your feelings and your decision. You don't have to give me an answer today. I genuinely wish happiness and beautiful things for you."
   </p>
 
   <!-- Button to Return Home -->
-  <div class="button-group">
+  <div class="button-group" style="margin-top: 2rem;">
     <a href="{{ url_for('index') }}" class="glow-btn">
       Return Home ♡
     </a>

@@ -1,111 +1,251 @@
 {% extends "base.html" %}
 
-{% block title %}Little Things For You ♡ | {{ site_title }}{% endblock %}
+{% block title %}Little Things for You ♡ | {{ site_title }}{% endblock %}
 
 {% block content %}
-<div style="text-align: center; margin-bottom: 2rem;">
-  <h1 class="cursive-title">Little Things For You ♡</h1>
-  <p class="subtitle">Quiet tokens of love, memory, and gratitude</p>
-  <div class="glowing-divider"></div>
-</div>
+<div class="little-things-wrapper">
 
-<div class="cards-grid">
+  <!-- Page Header -->
+  <header class="little-things-header">
+    <h1 class="cursive-title main-heading">Little Things for You ♡</h1>
+    <p class="subtitle main-sub">Some little surprises, made with care.</p>
+    <div class="glowing-divider"></div>
+  </header>
 
-  <!-- CARD 1: VIRTUAL GIFT BOX -->
-  <div class="little-card">
-    <h2 class="little-card-title">A Little Gift ♡</h2>
-    <p style="font-size: 0.92rem; color: var(--soft-silver);">A small token wrapped in midnight ribbons</p>
-    
-    <!-- Pure CSS Checkbox reveal -->
-    <input type="checkbox" id="gift-toggle" class="gift-checkbox">
-    <label for="gift-toggle" class="gift-interactive-box gift-label" title="Tap to unwrap this gift">
-      <img src="{{ url_for('static', filename='images/gift.svg') }}" class="gift-illustration" alt="Blue Wrapped Gift Box">
-      <span class="click-hint">✨ Tap to open gift</span>
-    </label>
+  <!-- SIX BEAUTIFUL FEATURE CARDS -->
+  <div class="features-grid">
 
-    <div class="gift-message-reveal">
-      <p style="font-weight: 600; color: var(--sky-blue); margin-bottom: 0.4rem;">For {{ nickname }} ♡</p>
-      <p>I wish you all the inner peace, genuine smiles, and unshakeable confidence in everything you do. You deserve to be cherished always.</p>
+    <!-- ==========================================
+         FEATURE 1: A LITTLE VIRTUAL GIFT 🎁
+         ========================================== -->
+    <div class="glass-card feature-card">
+      <div class="card-badge">Gift 🎁</div>
+      <h2 class="card-cursive-title">A Little Virtual Gift</h2>
+      <p class="card-description">A small token wrapped in deep blue & silver ribbons</p>
+
+      <!-- Pure CSS Checkbox Technique -->
+      <input type="checkbox" id="gift-toggle" class="gift-checkbox">
+      <label for="gift-toggle" class="gift-box-interactive" title="Click to open the gift box">
+        <div class="gift-box-container">
+          <!-- Gift Box Lid -->
+          <div class="gift-lid-element">
+            <div class="silver-ribbon-bow">
+              <span class="bow-left"></span>
+              <span class="bow-right"></span>
+              <span class="bow-center"></span>
+            </div>
+            <div class="silver-ribbon-horizontal"></div>
+          </div>
+          <!-- Gift Box Body -->
+          <div class="gift-body-element">
+            <div class="silver-ribbon-vertical"></div>
+          </div>
+        </div>
+        <span class="tap-hint-text">✨ Tap to open the gift</span>
+      </label>
+
+      <!-- Message Revealed on Click -->
+      <div class="gift-revealed-content">
+        <div class="sparkle-row">✦ ✧ ✦</div>
+        <p class="gift-heading-for">For {{ partner_name }} ♡</p>
+        <p class="gift-message-text">
+          I appreciate your patience, your kindness, and the warmth you bring. You deserve genuine peace, true respect, and endless smiles every single day.
+        </p>
+      </div>
     </div>
+
+    <!-- ==========================================
+         FEATURE 2: OUR MEMORIES 📸
+         ========================================== -->
+    <div class="glass-card feature-card">
+      <div class="card-badge">Memories 📸</div>
+      <h2 class="card-cursive-title">Our Memories</h2>
+      <p class="card-description">Moments that will always hold a quiet place in my heart</p>
+
+      <div class="memories-gallery-layout">
+        <!-- Polaroid Frame 1: Personal Photograph -->
+        <div class="polaroid-scrapbook-item tilt-left">
+          <div class="polaroid-photo-frame">
+            <img src="{{ url_for('static', filename='images/our_photo.jpg') }}" 
+                 alt="Our Special Memory" 
+                 class="polaroid-gallery-img"
+                 onerror="this.src='{{ url_for('static', filename='images/memory_silhouette.svg') }}'">
+          </div>
+          <p class="polaroid-gallery-caption">Every genuine laugh we shared ♡</p>
+        </div>
+
+        <!-- Polaroid Frame 2: Starlit Silhouette -->
+        <div class="polaroid-scrapbook-item tilt-right">
+          <div class="polaroid-photo-frame">
+            <img src="{{ url_for('static', filename='images/memory_silhouette.svg') }}" 
+                 alt="Under the same sky" 
+                 class="polaroid-gallery-img">
+          </div>
+          <p class="polaroid-gallery-caption">Under the same peaceful sky ♡</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         FEATURE 3: REASONS TO SMILE ⭐
+         ========================================== -->
+    <div class="glass-card feature-card">
+      <div class="card-badge">Smile ⭐</div>
+      <h2 class="card-cursive-title">Reasons to Smile</h2>
+      <p class="card-description">Four little reminders of how wonderful you are</p>
+
+      <div class="reasons-smile-grid">
+        <div class="smile-mini-card">
+          <span class="smile-star-icon">★</span>
+          <p class="smile-mini-text">Your happiness matters.</p>
+        </div>
+        <div class="smile-mini-card">
+          <span class="smile-star-icon">★</span>
+          <p class="smile-mini-text">Your individuality is special.</p>
+        </div>
+        <div class="smile-mini-card">
+          <span class="smile-star-icon">★</span>
+          <p class="smile-mini-text">Keep believing in yourself.</p>
+        </div>
+        <div class="smile-mini-card">
+          <span class="smile-star-icon">★</span>
+          <p class="smile-mini-text">Never stop working towards your dreams.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         FEATURE 4: A SECRET LETTER 💌
+         ========================================== -->
+    <div class="glass-card feature-card">
+      <div class="card-badge">Letter 💌</div>
+      <h2 class="card-cursive-title">A Secret Letter</h2>
+      <p class="card-description">Sealed with a glowing blue heart</p>
+
+      <!-- Pure CSS Checkbox Technique -->
+      <input type="checkbox" id="secret-letter-toggle" class="secret-letter-checkbox">
+      <label for="secret-letter-toggle" class="envelope-interactive-box" title="Tap to break the seal and read">
+        <div class="interactive-envelope-body">
+          <div class="interactive-envelope-flap"></div>
+          <div class="interactive-envelope-seal">♡</div>
+          <span class="envelope-tap-cta">Open Letter</span>
+        </div>
+        <span class="tap-hint-text">✨ Tap envelope to break seal</span>
+      </label>
+
+      <!-- Letter Paper Revealed on Click -->
+      <div class="secret-parchment-sheet">
+        <p class="secret-salutation">Dear {{ partner_name }},</p>
+        <p>From the bottom of my heart, thank you for listening to my thoughts. Whether as partners or individuals walking our paths, I will always root for your joy, your freedom, and your highest dreams. Keep that precious smile shining bright.</p>
+        <p class="secret-signoff">With true care, always ♡</p>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         FEATURE 5: LITTLE WISHES 🌙
+         ========================================== -->
+    <div class="glass-card feature-card">
+      <div class="card-badge">Wishes 🌙</div>
+      <h2 class="card-cursive-title">Little Wishes</h2>
+      <p class="card-description">My deepest, most genuine hopes for your journey</p>
+
+      <div class="wishes-cluster-grid">
+        <div class="wish-glowing-chip">
+          <span class="wish-crescent">☽</span> Complete your studies.
+        </div>
+        <div class="wish-glowing-chip">
+          <span class="wish-crescent">☽</span> Achieve your career goals.
+        </div>
+        <div class="wish-glowing-chip">
+          <span class="wish-crescent">☽</span> Become independent.
+        </div>
+        <div class="wish-glowing-chip">
+          <span class="wish-crescent">☽</span> Stay confident.
+        </div>
+        <div class="wish-glowing-chip">
+          <span class="wish-crescent">☽</span> Find happiness and success.
+        </div>
+        <div class="wish-glowing-chip">
+          <span class="wish-crescent">☽</span> Never stop believing in yourself.
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         FEATURE 6: A PROMISE TO MYSELF 🦋
+         (Visually distinct highlighted feature card)
+         ========================================== -->
+    <div class="glass-card feature-card promise-distinct-card">
+      <div class="card-badge promise-badge">Promise 🦋</div>
+      <h2 class="card-cursive-title promise-title">Not Just Words, But Actions.</h2>
+      <p class="card-description promise-desc">The real, tangible changes I commit to every day</p>
+
+      <div class="promises-list-container">
+        <div class="promise-row-item">
+          <span class="promise-bullet">✦</span>
+          <div>
+            <strong>Better communication:</strong> Speaking honestly without hiding uncomfortable thoughts.
+          </div>
+        </div>
+        <div class="promise-row-item">
+          <span class="promise-bullet">✦</span>
+          <div>
+            <strong>More patience:</strong> Taking a breath to listen before reacting.
+          </div>
+        </div>
+        <div class="promise-row-item">
+          <span class="promise-bullet">✦</span>
+          <div>
+            <strong>Respect for individuality:</strong> Honoring your choices, freedom, and space completely.
+          </div>
+        </div>
+        <div class="promise-row-item">
+          <span class="promise-bullet">✦</span>
+          <div>
+            <strong>Controlling anger:</strong> Choosing calm understanding over impulsive emotions.
+          </div>
+        </div>
+        <div class="promise-row-item">
+          <span class="promise-bullet">✦</span>
+          <div>
+            <strong>Understanding feelings:</strong> Listening to understand, not to impose expectations.
+          </div>
+        </div>
+        <div class="promise-row-item">
+          <span class="promise-bullet">✦</span>
+          <div>
+            <strong>Building trust through consistent actions:</strong> Letting daily respect speak louder than words.
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- CARD 2: OUR MEMORIES (Veiled Polaroid Scrapbook) -->
-  <div class="little-card">
-    <h2 class="little-card-title">Our Memories ♡</h2>
-    <p style="font-size: 0.92rem; color: var(--soft-silver);">Kept safe, tender and close to my heart</p>
-
-    <!-- Pure CSS Checkbox reveal: Keeps photo hidden until she gently chooses to unveil it -->
-    <input type="checkbox" id="memory-toggle" class="memory-checkbox">
-    <label for="memory-toggle" class="veiled-memory-box" title="Tap to unveil our cherished memory">
-      <!-- Veiling curtain (not shown abruptly) -->
-      <div class="memory-curtain">
-        <span class="memory-curtain-icon">🔒♡</span>
-        <span class="memory-curtain-text">Tap gently to unveil our memory</span>
-        <small style="color: var(--sky-blue); font-size: 0.75rem; margin-top: 4px;">(Protected with love)</small>
-      </div>
-
-      <!-- The revealed image underneath -->
-      <img src="{{ url_for('static', filename='images/memory_silhouette.svg') }}" class="memory-img" alt="Our Special Memory Under Moonlight">
-    </label>
+  <!-- ==========================================
+       EXTRA ENDING SECTION
+       ========================================== -->
+  <section class="glass-card ending-summary-card">
+    <h2 class="cursive-title ending-quote">"Some chapters are worth writing better."</h2>
     
-    <span class="click-hint" style="margin-top: 0.2rem;">✨ Click above to peek inside</span>
-    <p style="font-size: 0.88rem; color: var(--ice-blue); margin-top: 0.5rem; font-style: italic;">
-      "The moments when we simply laughed together remain my most peaceful memories."
+    <div class="glowing-divider"></div>
+
+    <p class="ending-message-body">
+      Whatever tomorrow brings, I hope it brings happiness, growth and beautiful memories.
     </p>
-  </div>
 
-  <!-- CARD 3: REASONS TO SMILE -->
-  <div class="little-card">
-    <h2 class="little-card-title">Reasons to Smile ♡</h2>
-    <p style="font-size: 0.92rem; color: var(--soft-silver); margin-bottom: 0.8rem;">A few reminders of how wonderful you are</p>
+    <div class="button-group" style="margin-top: 1.8rem;">
+      <!-- Primary button: Back to Home -->
+      <a href="{{ url_for('index') }}" class="glow-btn">
+        Back to Home ♡
+      </a>
 
-    <div class="reasons-list">
-      <div class="reason-item">
-        <span class="reason-star">★</span>
-        <span><strong>Your Dedication:</strong> How hard you work towards your goals and dreams.</span>
-      </div>
-      <div class="reason-item">
-        <span class="reason-star">★</span>
-        <span><strong>Your Pure Laugh:</strong> The real, effortless laughter that brightens every room.</span>
-      </div>
-      <div class="reason-item">
-        <span class="reason-star">★</span>
-        <span><strong>Your Strength:</strong> Even through tough days, you keep moving forward with grace.</span>
-      </div>
-      <div class="reason-item">
-        <span class="reason-star">★</span>
-        <span><strong>Your Individuality:</strong> Never lose your unique spark or apologize for being you.</span>
-      </div>
+      <!-- Secondary button: Read the Thank You Message -->
+      <a href="{{ url_for('final') }}" class="glow-btn glow-btn-secondary">
+        Read the Thank You Message
+      </a>
     </div>
-  </div>
+  </section>
 
-  <!-- CARD 4: SECRET ENVELOPE -->
-  <div class="little-card">
-    <h2 class="little-card-title">Secret Letter ♡</h2>
-    <p style="font-size: 0.92rem; color: var(--soft-silver);">Sealed with a glowing blue heart</p>
-
-    <!-- Pure CSS Checkbox Envelope Animation -->
-    <input type="checkbox" id="letter-toggle" class="letter-checkbox">
-    <label for="letter-toggle" class="envelope-wrapper envelope-label" title="Tap to break seal & open letter">
-      <div class="envelope-flap"></div>
-      <div class="envelope-seal">♡</div>
-      <span style="color: var(--ice-blue); font-size: 0.9rem; z-index: 2; margin-top: 25px;">Open Seal</span>
-    </label>
-
-    <span class="click-hint">✨ Tap envelope to break seal</span>
-
-    <div class="secret-letter-paper">
-      <p style="font-weight: 600; color: var(--royal-blue); margin-bottom: 0.4rem;">Dear {{ partner_name }},</p>
-      <p>No matter what path life takes, I will forever respect who you are. Thank you for every lesson, every conversation, and every truth you shared with me. Keep smiling always.</p>
-    </div>
-  </div>
-
-</div>
-
-<!-- Continue to Final Page -->
-<div class="button-group" style="margin-top: 2.5rem;">
-  <a href="{{ url_for('final') }}" class="glow-btn">
-    Final Message &rarr;
-  </a>
 </div>
 {% endblock %}

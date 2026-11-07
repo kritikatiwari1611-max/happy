@@ -5,13 +5,15 @@ from datetime import datetime
 # Database file location in the same directory
 DB_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'database.db')
 
-# Allowed response options for validation
-ALLOWED_RESPONSES = [
-    "Maybe We Can Try Again ♡",
-    "I Need More Time",
-    "I'm Willing to Try ♡",
-    "I Need Some Time"
-]
+# Mapping for response normalization (supports both codes and labels)
+RESPONSE_MAP = {
+    'maybe': "Maybe We Can Try Again ♡",
+    'more_time': "I Need More Time",
+    "Maybe We Can Try Again ♡": "Maybe We Can Try Again ♡",
+    "I Need More Time": "I Need More Time",
+    "I'm Willing to Try ♡": "Maybe We Can Try Again ♡",
+    "I Need Some Time": "I Need More Time"
+}
 
 def get_connection():
     """Create and return a database connection with dictionary-like row access."""
@@ -35,17 +37,19 @@ def init_db():
 def save_response(choice):
     """
     Validate and save the user's apology response with the current timestamp.
+    Accepts 'maybe', 'more_time', or their readable labels.
     Returns True if valid and saved, False otherwise.
     """
-    if choice not in ALLOWED_RESPONSES:
+    if choice not in RESPONSE_MAP:
         return False
     
+    saved_choice = RESPONSE_MAP[choice]
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     with get_connection() as conn:
         cursor = conn.cursor()
         cursor.execute(
             'INSERT INTO responses (choice, timestamp) VALUES (?, ?)',
-            (choice, current_time)
+            (saved_choice, current_time)
         )
         conn.commit()
     return True

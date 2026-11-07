@@ -5,7 +5,7 @@
 {% block content %}
 <section class="glass-card surprise-page-card">
 
-  <!-- THE SURPRISE PHOTOGRAPH (Revealed only here at the final chapter) -->
+  <!-- THE SURPRISE PHOTOGRAPH (Inside beautiful Polaroid-style frame) -->
   <div class="photograph-section">
     <div class="polaroid-wrapper">
       <div class="polaroid-frame-styled">
@@ -33,40 +33,22 @@
       There's no pressure to answer immediately. I just wanted to tell you honestly how I feel.
     </p>
 
-    <!-- If user already submitted a response -->
-    {% if saved or latest_response %}
-      <div class="saved-acknowledgment-box">
-        <p style="color: var(--sky-blue); font-weight: 600;">
-          Your choice was saved with care: "{{ latest_response.choice if latest_response else 'Thank you' }}" ♡
-        </p>
-        <p style="font-size: 0.9rem; color: var(--soft-silver); margin-top: 0.3rem;">
-          Take all the time in the world. Whatever you decide, I will always respect you.
-        </p>
-      </div>
-    {% endif %}
-
     <!-- Pure HTML POST Form (Strictly No JS) -->
     <form action="{{ url_for('save_response') }}" method="POST" class="second-chance-form">
       <div class="button-group">
         
-        <!-- Choice 1: Maybe We Can Try Again -->
-        <button type="submit" name="choice" value="Maybe We Can Try Again ♡" class="glow-btn">
+        <!-- Choice 1: Maybe We Can Try Again -> Redirects to /little-things -->
+        <button type="submit" name="choice" value="maybe" class="glow-btn">
           Maybe We Can Try Again ♡
         </button>
 
-        <!-- Choice 2: I Need More Time -->
-        <button type="submit" name="choice" value="I Need More Time" class="glow-btn glow-btn-secondary">
+        <!-- Choice 2: I Need More Time -> Redirects to /final -->
+        <button type="submit" name="choice" value="more_time" class="glow-btn glow-btn-secondary">
           I Need More Time
         </button>
 
       </div>
     </form>
-
-    <div style="margin-top: 2.2rem;">
-      <a href="{{ url_for('final') }}" style="color: var(--sky-blue); font-size: 0.95rem; text-decoration: underline;">
-        A quiet thank you note &rarr;
-      </a>
-    </div>
 
   </div>
 
