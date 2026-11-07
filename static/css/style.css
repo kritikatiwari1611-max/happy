@@ -1577,6 +1577,39 @@ body {
   text-shadow: 0 0 10px rgba(135, 206, 250, 0.4);
 }
 
+.audio-companion-box {
+  margin-top: 1.5rem;
+  background: rgba(7, 27, 58, 0.7);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 8px 24px rgba(3, 13, 29, 0.6);
+  text-align: center;
+}
+
+.audio-companion-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+  text-shadow: 0 0 10px var(--sky-blue);
+}
+
+.memories-native-audio {
+  width: 100%;
+  max-width: 500px;
+  height: 40px;
+  outline: none;
+  filter: drop-shadow(0 0 8px rgba(36, 107, 206, 0.4));
+}
+
+.audio-helper-note {
+  font-size: 0.88rem;
+  color: var(--sky-blue);
+  display: block;
+  margin-top: 0.7rem;
+}
+
 /* ============================================================
    RESPONSIVENESS & ACCESSIBILITY
    ============================================================ */
