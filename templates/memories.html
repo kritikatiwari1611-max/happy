@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Our Memories ♡ | {{ site_title }}{% endblock %}
+
+{% block content %}
+<section class="glass-card video-page-card">
+
+  <!-- Header -->
+  <div class="video-header-area">
+    <h1 class="cursive-title memories-heading">Our Memories ♡</h1>
+    <p class="subtitle memories-sub">Some moments are forever...</p>
+    <div class="glowing-divider"></div>
+  </div>
+
+  <!-- Decorative Corner Rose Accents on Card Edges (Kept outside video frame) -->
+  <div class="video-decorations-wrapper" aria-hidden="true">
+    <img src="{{ url_for('static', filename='images/blue_roses.svg') }}" class="video-roses-edge roses-left" alt="">
+    <img src="{{ url_for('static', filename='images/blue_roses.svg') }}" class="video-roses-edge roses-right" alt="">
+  </div>
+
+  <!-- Video Showcase Container (Main focus, unobstructed controls) -->
+  <div class="video-showcase-container">
+    <div class="video-player-frame">
+      <video controls preload="metadata" class="memories-native-video">
+        <source src="{{ url_for('static', filename='videos/our_memories.mp4') }}" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+    </div>
+  </div>
+
+  <!-- Caption Below Video -->
+  <p class="video-caption-text">
+    "A little collection of moments that will always be special ♡"
+  </p>
+
+  <!-- Navigation: Back to Little Things -->
+  <div class="button-group" style="margin-top: 2rem;">
+    <a href="{{ url_for('little_things') }}" class="glow-btn">
+      &larr; Back to Little Things
+    </a>
+  </div>
+
+</section>
+{% endblock %}

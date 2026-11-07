@@ -73,6 +73,11 @@ def save_response():
 def little_things():
     return render_template('little_things.html')
 
+# VIDEO FEATURE: OUR MEMORIES (/memories)
+@app.route('/memories')
+def memories():
+    return render_template('memories.html')
+
 # FINAL THANK YOU PAGE (/final or /thank-you)
 @app.route('/thank-you')
 @app.route('/final')
