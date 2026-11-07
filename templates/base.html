@@ -41,44 +41,6 @@
     <img src="{{ url_for('static', filename='images/butterfly.svg') }}" class="ambient-butterfly butterfly-b" alt="">
   </div>
 
-  <!-- Header & Pure CSS Responsive Navigation -->
-  <header class="site-header">
-    <div class="nav-container">
-      <a href="{{ url_for('index') }}" class="brand-link">
-        Our Little New Beginning <span>♡</span>
-      </a>
-
-      <!-- Pure CSS mobile menu toggle -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
-      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-
-      <ul class="nav-menu">
-        <li class="nav-item {% if request.endpoint == 'index' %}active{% endif %}">
-          <a href="{{ url_for('index') }}">Welcome</a>
-        </li>
-        <li class="nav-item {% if request.endpoint == 'apology' %}active{% endif %}">
-          <a href="{{ url_for('apology') }}">Apology</a>
-        </li>
-        <li class="nav-item {% if request.endpoint == 'gate' %}active{% endif %}">
-          <a href="{{ url_for('gate') }}">The Gate</a>
-        </li>
-        <li class="nav-item {% if request.endpoint == 'beginning' %}active{% endif %}">
-          <a href="{{ url_for('beginning') }}">New Beginning</a>
-        </li>
-        <li class="nav-item {% if request.endpoint == 'little_things' %}active{% endif %}">
-          <a href="{{ url_for('little_things') }}">Little Things</a>
-        </li>
-        <li class="nav-item {% if request.endpoint == 'final' %}active{% endif %}">
-          <a href="{{ url_for('final') }}">Thank You</a>
-        </li>
-      </ul>
-    </div>
-  </header>
-
   <!-- Page Content Container -->
   <main class="main-wrapper">
     {% block content %}{% endblock %}
