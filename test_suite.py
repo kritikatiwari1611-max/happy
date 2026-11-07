@@ -64,7 +64,7 @@ def run_tests():
     assert post_more_time.headers['Location'] == '/final', f"Unexpected redirect target: {post_more_time.headers['Location']}"
     print("POST /save-response (choice='more_time') -> 302 Redirect to /final (PASS)")
 
-    print("\n=== STEP 4: VERIFYING 6 FEATURES ON /LITTLE-THINGS ===")
+    print("\n=== STEP 4: VERIFYING FEATURES ON /LITTLE-THINGS ===")
     lt_resp = client.get('/little-things')
     lt_html = lt_resp.data.decode('utf-8')
     assert "A Little Virtual Gift" in lt_html, "Feature 1 missing"
@@ -72,9 +72,9 @@ def run_tests():
     assert "Reasons to Smile" in lt_html, "Feature 3 missing"
     assert "A Secret Letter" in lt_html, "Feature 4 missing"
     assert "Little Wishes" in lt_html, "Feature 5 missing"
-    assert "Not Just Words, But Actions." in lt_html, "Feature 6 missing"
+    assert "Not Just Words, But Actions." not in lt_html, "Promise section was not removed"
     assert "Some chapters are worth writing better." in lt_html, "Ending section missing"
-    print("All 6 feature cards and the ending section verified on /little-things!")
+    print("Surprise cards and ending section verified on /little-things (Promise card removed)!")
 
     print("\n=== STEP 5: VERIFYING /FINAL CONTENT ===")
     final_resp = client.get('/final')
