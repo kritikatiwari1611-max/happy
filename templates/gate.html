@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}The Magical Gate ♡ | {{ site_title }}{% endblock %}
+
+{% block content %}
+<section class="gate-section">
+  
+  <div style="text-align: center; margin-bottom: 1.5rem;">
+    <h1 class="cursive-title">The Magical Garden Gate ♡</h1>
+    <p class="subtitle">Where honesty meets a quiet new dawn</p>
+  </div>
+
+  <!-- If redirected after saving response from apology page, show gentle acknowledgement -->
+  {% if answered %}
+    <div style="text-align: center; margin-bottom: 1.2rem;">
+      <span class="status-badge">
+        Thank you for your honesty: "{{ latest_response.choice if latest_response else 'Saved' }}" ♡
+      </span>
+    </div>
+  {% endif %}
+
+  <!-- 3D Gate Stage -->
+  <div class="gate-stage">
+    
+    <!-- Decorative Lanterns on both sides -->
+    <img src="{{ url_for('static', filename='images/lantern.svg') }}" class="gate-lantern lantern-left" alt="Glowing Lantern">
+    <img src="{{ url_for('static', filename='images/lantern.svg') }}" class="gate-lantern lantern-right" alt="Glowing Lantern">
+
+    <!-- Blue Roses decorating bottom corners -->
+    <img src="{{ url_for('static', filename='images/blue_roses.svg') }}" class="gate-flowers flower-left" alt="Blue Roses">
+    <img src="{{ url_for('static', filename='images/blue_roses.svg') }}" class="gate-flowers flower-right" alt="Blue Roses">
+
+    <!-- Interactive Checkbox Toggle (Allows manual opening/re-closing latch) -->
+    <input type="checkbox" id="gate-toggle" class="gate-checkbox" checked>
+
+    <!-- The Two Gate Leaves (Left & Right 3D swing) -->
+    <div class="gates-container" aria-hidden="true">
+      <!-- Left Gate Leaf -->
+      <div class="gate-leaf gate-left">
+        <div class="gate-ironwork">
+          <div class="iron-arch"></div>
+          <div class="iron-bars"></div>
+        </div>
+      </div>
+
+      <!-- Right Gate Leaf -->
+      <div class="gate-leaf gate-right">
+        <div class="gate-ironwork">
+          <div class="iron-arch"></div>
+          <div class="iron-bars"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inner Sanctuary Revealed Behind Gates -->
+    <div class="garden-inner-sanctuary">
+      <h2 class="gate-heart-quote">"Every new beginning starts with a little hope ♡"</h2>
+      
+      <div class="gate-message-box">
+        <p><strong>{{ partner_name }}, ek baat aur kehni thi 😊</strong></p>
+
+        <p>Please isse kisi pressure ya expectation ki tarah matt lena.</p>
+
+        <p>I know humara relationship perfect nahi tha. Hum dono se mistakes hui, aur main maanta hoon ki meri taraf se bhi kaafi cheezein galat hui.</p>
+
+        <p>Lekin mujhe aaj bhi lagta ki relationships perfect logon se nahi, balki do aise logon se bante hain jo ek doosre ko samajhne, accept karne aur improve karne ke liye ready hote hain.</p>
+
+        <p>{{ partner_name }}, I don't want us to go back to the same relationship we had before. Agar kabhi hum ek doosre ko another chance dein, toh main chahta hoon ki hum ek completely healthier relationship build karein.</p>
+
+        <p>Is baar tumhari choices, friendships, clothes, freedom aur individuality ko respect karna chahta hoon. Main apni insecurities ko tumhari restrictions nahi banaunga.</p>
+
+        <p>Bas meri bhi ek expectation rahegi ki hum dono ek doosre ke saath honest rahein, uncomfortable situations ko hide karne ke bajaye communicate karein aur problems ko milkar solve karein.</p>
+
+        <p>I don't want to control you. I want to understand you better.</p>
+
+        <p><strong>{{ partner_name }}, would you ever consider giving us one more chance? 🥺</strong></p>
+
+        <p>Main tumse koi immediate answer nahi chahta</p>
+
+        <p>Bas ek baar honestly poochna chahta tha because somewhere in my heart, I still believe ki hum dono chahein toh ek better relationship build kar sakte hain.😊🧿💝</p>
+
+        <p style="color: var(--sky-blue); font-weight: 600;">Smile😁❤️♾️</p>
+      </div>
+
+      <!-- Continue Navigation Button -->
+      <div class="button-group">
+        <a href="{{ url_for('beginning') }}" class="glow-btn">
+          Continue &rarr;
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Pure CSS Toggle Latch (for user interaction) -->
+    <label for="gate-toggle" class="gate-latch-label" title="Click to open or close the garden gates">
+      <span>✨ Touch Gate Latch</span>
+    </label>
+
+  </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <defs>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#246BCE"/>
+      <stop offset="60%" stop-color="#0B2D55"/>
+      <stop offset="100%" stop-color="#071B3A"/>
+    </linearGradient>
+    <linearGradient id="lidGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#87CEFA"/>
+      <stop offset="50%" stop-color="#246BCE"/>
+      <stop offset="100%" stop-color="#0B2D55"/>
+    </linearGradient>
+    <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#DDF3FF"/>
+      <stop offset="100%" stop-color="#87CEFA"/>
+    </linearGradient>
+    <filter id="giftGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Gift Box Body -->
+  <rect x="40" y="75" width="100" height="75" rx="8" fill="url(#boxGrad)" stroke="#87CEFA" stroke-width="1.5" filter="url(#giftGlow)"/>
+  
+  <!-- Vertical Ribbon on Body -->
+  <rect x="83" y="75" width="14" height="75" fill="url(#ribbonGrad)"/>
+
+  <!-- Gift Box Lid -->
+  <rect x="33" y="60" width="114" height="20" rx="5" fill="url(#lidGrad)" stroke="#DDF3FF" stroke-width="1.5"/>
+  <rect x="83" y="60" width="14" height="20" fill="url(#ribbonGrad)"/>
+
+  <!-- Ribbon Bow -->
+  <!-- Left Loop -->
+  <path d="M 90 60 C 65 30, 45 45, 85 58 Z" fill="url(#ribbonGrad)"/>
+  <!-- Right Loop -->
+  <path d="M 90 60 C 115 30, 135 45, 95 58 Z" fill="url(#ribbonGrad)"/>
+  <!-- Center Knot -->
+  <circle cx="90" cy="58" r="7" fill="#FFFFFF"/>
+  <circle cx="90" cy="58" r="4" fill="#87CEFA"/>
+
+  <!-- Hanging Ribbons -->
+  <path d="M 86 63 Q 75 75 70 90" stroke="url(#ribbonGrad)" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M 94 63 Q 105 75 110 90" stroke="url(#ribbonGrad)" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+  <!-- Sparkles -->
+  <polygon points="135,45 137,50 142,52 137,54 135,59 133,54 128,52 133,50" fill="#FFFFFF"/>
+  <polygon points="45,115 47,118 51,119 47,120 45,124 43,120 39,119 43,118" fill="#DDF3FF"/>
+</svg>

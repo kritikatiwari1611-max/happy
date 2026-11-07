@@ -1,0 +1,23 @@
+# Python cache and temporary files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environment files
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Database (optional to ignore or include fresh)
+# Uncomment the line below if you want each deployment to start with fresh DB
+# database.db
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

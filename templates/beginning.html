@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}A New Beginning ♡ | {{ site_title }}{% endblock %}
+
+{% block content %}
+<section class="glass-card">
+  
+  <h1 class="cursive-title">A New Beginning ♡</h1>
+  <p class="subtitle">A peaceful chapter built on care and mutual respect</p>
+
+  <div class="glowing-divider"></div>
+
+  <!-- Romantic Moonlit Polaroid Frame -->
+  <div class="polaroid-frame">
+    <div class="polaroid-img-box">
+      <img src="{{ url_for('static', filename='images/memory_silhouette.svg') }}" alt="Gazing at stars under the blue moon">
+    </div>
+    <div class="polaroid-caption">Under the same sky ♡</div>
+  </div>
+
+  <!-- Beginning Message -->
+  <p class="beginning-text">
+    "Let's learn from yesterday, understand each other better and create beautiful memories. Every new chapter deserves patience, honesty and kindness."
+  </p>
+
+  <p style="color: var(--soft-silver); font-size: 1rem; max-width: 580px; margin: 0 auto 1.5rem auto;">
+    Whatever happened in the past taught us what truly matters. If life grants us tomorrow, let it be gentle, respectful and full of genuine laughter.
+  </p>
+
+  <!-- Button to Page 5: Little Things -->
+  <div class="button-group">
+    <a href="{{ url_for('little_things') }}" class="glow-btn">
+      Explore More &rarr;
+    </a>
+  </div>
+
+</section>
+{% endblock %}

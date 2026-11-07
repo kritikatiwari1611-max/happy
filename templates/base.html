@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ site_title }}{% endblock %}</title>
+  
+  <!-- Romantic Google Fonts (Great Vibes & Quicksand) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Pure CSS Stylesheet (Strict Blue Theme, No JS) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+  <!-- Atmospheric Background: Stars, Clouds, Floating Hearts & Butterflies -->
+  <div class="sky-ambiance" aria-hidden="true">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    
+    <div class="floating-cloud cloud-1"></div>
+    <div class="floating-cloud cloud-2"></div>
+    
+    <div class="floating-heart heart-1">♡</div>
+    <div class="floating-heart heart-2">♡</div>
+    <div class="floating-heart heart-3">♡</div>
+    <div class="floating-heart heart-4">♡</div>
+
+    <img src="{{ url_for('static', filename='images/butterfly.svg') }}" class="ambient-butterfly butterfly-a" alt="">
+    <img src="{{ url_for('static', filename='images/butterfly.svg') }}" class="ambient-butterfly butterfly-b" alt="">
+  </div>
+
+  <!-- Header & Pure CSS Responsive Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="{{ url_for('index') }}" class="brand-link">
+        Our Little New Beginning <span>♡</span>
+      </a>
+
+      <!-- Pure CSS mobile menu toggle -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul class="nav-menu">
+        <li class="nav-item {% if request.endpoint == 'index' %}active{% endif %}">
+          <a href="{{ url_for('index') }}">Welcome</a>
+        </li>
+        <li class="nav-item {% if request.endpoint == 'apology' %}active{% endif %}">
+          <a href="{{ url_for('apology') }}">Apology</a>
+        </li>
+        <li class="nav-item {% if request.endpoint == 'gate' %}active{% endif %}">
+          <a href="{{ url_for('gate') }}">The Gate</a>
+        </li>
+        <li class="nav-item {% if request.endpoint == 'beginning' %}active{% endif %}">
+          <a href="{{ url_for('beginning') }}">New Beginning</a>
+        </li>
+        <li class="nav-item {% if request.endpoint == 'little_things' %}active{% endif %}">
+          <a href="{{ url_for('little_things') }}">Little Things</a>
+        </li>
+        <li class="nav-item {% if request.endpoint == 'final' %}active{% endif %}">
+          <a href="{{ url_for('final') }}">Thank You</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Page Content Container -->
+  <main class="main-wrapper">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Blue Romantic Footer -->
+  <footer class="site-footer">
+    <p>Crafted with patience, honesty & heartfelt care <span>♡</span> {{ partner_name }} &bull; {{ year }}</p>
+  </footer>
+
+</body>
+</html>

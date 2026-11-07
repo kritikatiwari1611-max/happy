@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="200" height="220">
+  <defs>
+    <radialGradient id="teddyBody" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#87CEFA"/>
+      <stop offset="70%" stop-color="#246BCE"/>
+      <stop offset="100%" stop-color="#0B2D55"/>
+    </radialGradient>
+    <radialGradient id="teddyLight" cx="45%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#DDF3FF"/>
+      <stop offset="80%" stop-color="#87CEFA"/>
+      <stop offset="100%" stop-color="#246BCE"/>
+    </radialGradient>
+    <radialGradient id="heartBlue" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#87CEFA"/>
+      <stop offset="70%" stop-color="#246BCE"/>
+      <stop offset="100%" stop-color="#0B2D55"/>
+    </radialGradient>
+    <filter id="glowTeddy" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Left Ear -->
+  <circle cx="65" cy="55" r="24" fill="url(#teddyBody)"/>
+  <circle cx="65" cy="55" r="14" fill="url(#teddyLight)"/>
+  
+  <!-- Right Ear -->
+  <circle cx="135" cy="55" r="24" fill="url(#teddyBody)"/>
+  <circle cx="135" cy="55" r="14" fill="url(#teddyLight)"/>
+
+  <!-- Body -->
+  <ellipse cx="100" cy="140" rx="46" ry="52" fill="url(#teddyBody)"/>
+  <!-- Belly -->
+  <ellipse cx="100" cy="145" rx="30" ry="36" fill="url(#teddyLight)" opacity="0.85"/>
+
+  <!-- Feet -->
+  <ellipse cx="65" cy="185" rx="20" ry="16" fill="url(#teddyBody)"/>
+  <circle cx="65" cy="185" r="10" fill="#DDF3FF" opacity="0.9"/>
+  <circle cx="58" cy="178" r="3" fill="#DDF3FF"/>
+  <circle cx="65" cy="176" r="3" fill="#DDF3FF"/>
+  <circle cx="72" cy="178" r="3" fill="#DDF3FF"/>
+
+  <ellipse cx="135" cy="185" rx="20" ry="16" fill="url(#teddyBody)"/>
+  <circle cx="135" cy="185" r="10" fill="#DDF3FF" opacity="0.9"/>
+  <circle cx="128" cy="178" r="3" fill="#DDF3FF"/>
+  <circle cx="135" cy="176" r="3" fill="#DDF3FF"/>
+  <circle cx="142" cy="178" r="3" fill="#DDF3FF"/>
+
+  <!-- Head -->
+  <circle cx="100" cy="90" r="45" fill="url(#teddyBody)"/>
+  <!-- Muzzle -->
+  <ellipse cx="100" cy="100" rx="20" ry="15" fill="url(#teddyLight)"/>
+  <!-- Nose -->
+  <path d="M 94 94 Q 100 90 106 94 Q 100 102 94 94 Z" fill="#071B3A"/>
+  <!-- Mouth -->
+  <path d="M 100 100 L 100 107 M 95 106 Q 100 110 105 106" stroke="#071B3A" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Eyes -->
+  <circle cx="84" cy="84" r="5" fill="#071B3A"/>
+  <circle cx="82" cy="82" r="1.8" fill="#FFFFFF"/>
+  <circle cx="116" cy="84" r="5" fill="#071B3A"/>
+  <circle cx="114" cy="82" r="1.8" fill="#FFFFFF"/>
+
+  <!-- Cheeks (Soft Ice Blue, NOT Pink) -->
+  <ellipse cx="78" cy="95" rx="6" ry="4" fill="#87CEFA" opacity="0.6"/>
+  <ellipse cx="122" cy="95" rx="6" ry="4" fill="#87CEFA" opacity="0.6"/>
+
+  <!-- Arms holding glowing heart -->
+  <ellipse cx="64" cy="130" rx="14" ry="24" transform="rotate(30 64 130)" fill="url(#teddyBody)"/>
+  <ellipse cx="136" cy="130" rx="14" ry="24" transform="rotate(-30 136 130)" fill="url(#teddyBody)"/>
+
+  <!-- Glowing Blue Heart in hands -->
+  <path d="M 100 150 C 70 120, 60 145, 100 172 C 140 145, 130 120, 100 150 Z" 
+        fill="url(#heartBlue)" filter="url(#glowTeddy)"/>
+  <!-- Heart shine -->
+  <ellipse cx="90" cy="142" rx="4" ry="7" transform="rotate(-35 90 142)" fill="#FFFFFF" opacity="0.6"/>
+</svg>

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Thank You ♡ | {{ site_title }}{% endblock %}
+
+{% block content %}
+<section class="glass-card" style="text-align: center;">
+  
+  <h1 class="cursive-title">Thank You ♡</h1>
+  <p class="subtitle">For reading my sincere thoughts with patience</p>
+
+  <div class="glowing-divider"></div>
+
+  <!-- Large Glowing Blue Heart -->
+  <div class="final-heart-monument">
+    <span class="big-glowing-heart" aria-hidden="true">♡</span>
+  </div>
+
+  <!-- Decorative Blue Roses & Lanterns -->
+  <div class="final-decor-row" aria-hidden="true">
+    <img src="{{ url_for('static', filename='images/lantern.svg') }}" class="final-lantern" alt="">
+    <img src="{{ url_for('static', filename='images/blue_roses.svg') }}" class="final-roses" alt="">
+    <img src="{{ url_for('static', filename='images/lantern.svg') }}" class="final-lantern" alt="">
+  </div>
+
+  <!-- Final Heartfelt Message -->
+  <p class="final-quote">
+    "Thank you for taking the time to read this. Whatever your decision, I hope we can move forward with kindness and understanding."
+  </p>
+
+  <p style="color: var(--soft-silver); font-size: 1.02rem; max-width: 540px; margin: 0 auto 2rem auto;">
+    Take all the time you need. Your peace, dignity, and happiness will always matter to me above all else. Stay blessed and keep that precious smile alive. 😊🧿💝
+  </p>
+
+  <!-- Button to Return Home -->
+  <div class="button-group">
+    <a href="{{ url_for('index') }}" class="glow-btn">
+      Return Home ♡
+    </a>
+  </div>
+
+</section>
+{% endblock %}

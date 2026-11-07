@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}I'm Really Sorry... ♡ | {{ site_title }}{% endblock %}
+
+{% block content %}
+<section class="glass-card">
+  
+  <h1 class="cursive-title">I'm Really Sorry... ♡</h1>
+  <p class="subtitle">From the deepest corner of my heart</p>
+
+  <div class="glowing-divider"></div>
+
+  <!-- Letter Sheet (White & Ice-Blue with Ribbon Accent) -->
+  <article class="letter-sheet">
+    <p class="letter-salutation">{{ partner_name }}, ek baat kehni thi 😊</p>
+
+    <p>Sabse pehle, I'm genuinely sorry for everything I've done that hurt you.</p>
+
+    <p>Ab peeche mudkar dekhta hoon toh realise hota hai ki maine kai baar tumhari feelings, choices aur individuality ko samajhne ki jagah apni expectations tum par impose ki.</p>
+
+    <p>{{ partner_name }}, tum deserve karti thi ki tumhara partner tumhari respect kare, tumhari baat sune, tumhe comfortable feel karaye aur tumhari value samjhe. Lekin unfortunately, main kai baar woh partner nahi ban paaya.</p>
+
+    <p>Mujhe realise hai ki meri wajah se tum kabhi-kabhi mujhse darne lagi thi, aur honestly, yeh sochkar mujhe bahut bura lagta hai.</p>
+
+    <p>Main apni mistakes ko justify nahi karunga. Meri intentions chahe jo bhi rahi hon, mere actions se tumhe hurt hua, aur uski responsibility meri hai.</p>
+
+    <p>Mai apne upar genuinely work karunga. Apne behaviour, anger, language, insecurities aur doosron ko treat karne ke tareeke par. Apni kamiyan dur karunga, sabko respect dunga aur khud ka bhi ache se dhyan rakhunga😁</p>
+
+    <p>Tumhari life mein bahut saari achhi cheezein aayein. Apni padhai complete karna, ek achhi job secure karna aur independent banna. Ups and downs aayenge lekin mehnat karna, rukna matt {{ partner_name }} 😊</p>
+
+    <p>Thank you for all the beautiful memories and everything you taught me.</p>
+
+    <p class="letter-closing">
+      I'm really sorry, {{ pet_name }} 😊🧿💝<br>
+      Smile😁
+    </p>
+  </article>
+
+  <!-- Interactive Response Form (HTML POST, No Pressure) -->
+  <div class="response-card">
+    
+    {% if latest_response %}
+      <div class="status-badge">
+        Current choice: <strong>{{ latest_response.choice }}</strong> 
+        <small>({{ latest_response.timestamp }})</small>
+      </div>
+      <p style="font-size: 0.95rem; color: var(--ice-blue); margin-bottom: 1rem;">
+        Thank you for responding. You can update your choice anytime below, or simply walk through the gate.
+      </p>
+    {% endif %}
+
+    <h2 class="response-question">Can we have a second chance and a new beginning?</h2>
+    
+    <form action="{{ url_for('save_response') }}" method="POST">
+      <div class="button-group">
+        <!-- Button 1: Willing to try -->
+        <button type="submit" name="choice" value="I'm Willing to Try ♡" class="glow-btn">
+          I'm Willing to Try ♡
+        </button>
+        
+        <!-- Button 2: Needs time (No pressure) -->
+        <button type="submit" name="choice" value="I Need Some Time" class="glow-btn glow-btn-secondary">
+          I Need Some Time
+        </button>
+      </div>
+    </form>
+
+    <div style="margin-top: 1.5rem;">
+      <a href="{{ url_for('gate') }}" style="color: var(--sky-blue); text-decoration: underline; font-size: 0.95rem;">
+        Walk to The Gate without answering right now &rarr;
+      </a>
+    </div>
+
+  </div>
+
+</section>
+{% endblock %}

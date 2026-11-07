@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 180" width="120" height="180">
+  <defs>
+    <radialGradient id="lanternLight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#DDF3FF" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#87CEFA" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#246BCE" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="lanternGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Hanging Chain -->
+  <line x1="60" y1="0" x2="60" y2="40" stroke="#87CEFA" stroke-width="2.5" stroke-dasharray="2,3"/>
+  <!-- Top Ring -->
+  <circle cx="60" cy="42" r="6" stroke="#DDF3FF" stroke-width="2.5" fill="none"/>
+  
+  <!-- Lantern Roof -->
+  <path d="M 40 55 L 60 44 L 80 55 L 75 60 L 45 60 Z" fill="#0B2D55" stroke="#87CEFA" stroke-width="1.5"/>
+
+  <!-- Lantern Inner Glow -->
+  <circle cx="60" cy="85" r="32" fill="url(#lanternLight)" filter="url(#lanternGlow)"/>
+
+  <!-- Glass Core -->
+  <path d="M 45 60 L 75 60 L 70 110 L 50 110 Z" fill="#87CEFA" fill-opacity="0.25" stroke="#DDF3FF" stroke-width="1.5"/>
+
+  <!-- Inner Candle / Light Flame -->
+  <path d="M 60 96 C 56 86, 60 76, 60 72 C 60 76, 64 86, 60 96 Z" fill="#FFFFFF"/>
+  <circle cx="60" cy="82" r="5" fill="#DDF3FF" opacity="0.8"/>
+
+  <!-- Lantern Base -->
+  <path d="M 48 110 L 72 110 L 67 118 L 53 118 Z" fill="#0B2D55" stroke="#87CEFA" stroke-width="1.5"/>
+  <!-- Bottom Finial -->
+  <path d="M 60 118 L 60 128" stroke="#87CEFA" stroke-width="2"/>
+  <circle cx="60" cy="130" r="3" fill="#DDF3FF"/>
+</svg>
