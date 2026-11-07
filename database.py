@@ -7,6 +7,8 @@ DB_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'database.db'
 
 # Allowed response options for validation
 ALLOWED_RESPONSES = [
+    "Maybe We Can Try Again ♡",
+    "I Need More Time",
     "I'm Willing to Try ♡",
     "I Need Some Time"
 ]

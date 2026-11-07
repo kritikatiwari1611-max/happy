@@ -3,98 +3,85 @@
 {% block title %}The Magical Gate ♡ | {{ site_title }}{% endblock %}
 
 {% block content %}
-<section class="gate-section">
-  
-  <div style="text-align: center; margin-bottom: 1.5rem;">
-    <h1 class="cursive-title">The Magical Garden Gate ♡</h1>
-    <p class="subtitle">Where honesty meets a quiet new dawn</p>
-  </div>
+<section class="gate-showcase-container">
 
-  <!-- If redirected after saving response from apology page, show gentle acknowledgement -->
-  {% if answered %}
-    <div style="text-align: center; margin-bottom: 1.2rem;">
-      <span class="status-badge">
-        Thank you for your honesty: "{{ latest_response.choice if latest_response else 'Saved' }}" ♡
-      </span>
-    </div>
-  {% endif %}
-
-  <!-- 3D Gate Stage -->
-  <div class="gate-stage">
+  <!-- Gate Stage with 3D Perspective and Moonlit Pathway -->
+  <div class="magical-gate-stage">
     
-    <!-- Decorative Lanterns on both sides -->
-    <img src="{{ url_for('static', filename='images/lantern.svg') }}" class="gate-lantern lantern-left" alt="Glowing Lantern">
-    <img src="{{ url_for('static', filename='images/lantern.svg') }}" class="gate-lantern lantern-right" alt="Glowing Lantern">
+    <!-- Moonlit garden pathway ground glow -->
+    <div class="moonlit-pathway" aria-hidden="true"></div>
 
-    <!-- Blue Roses decorating bottom corners -->
-    <img src="{{ url_for('static', filename='images/blue_roses.svg') }}" class="gate-flowers flower-left" alt="Blue Roses">
-    <img src="{{ url_for('static', filename='images/blue_roses.svg') }}" class="gate-flowers flower-right" alt="Blue Roses">
+    <!-- Hanging glowing lanterns on both sides of gates -->
+    <img src="{{ url_for('static', filename='images/lantern.svg') }}" class="gate-lantern lantern-pos-left" alt="Glowing Lantern">
+    <img src="{{ url_for('static', filename='images/lantern.svg') }}" class="gate-lantern lantern-pos-right" alt="Glowing Lantern">
 
-    <!-- Interactive Checkbox Toggle (Allows manual opening/re-closing latch) -->
-    <input type="checkbox" id="gate-toggle" class="gate-checkbox" checked>
+    <!-- Glowing Blue Roses on left and right pillars -->
+    <img src="{{ url_for('static', filename='images/blue_roses.svg') }}" class="gate-roses roses-pos-left" alt="Blue Roses">
+    <img src="{{ url_for('static', filename='images/blue_roses.svg') }}" class="gate-roses roses-pos-right" alt="Blue Roses">
 
-    <!-- The Two Gate Leaves (Left & Right 3D swing) -->
-    <div class="gates-container" aria-hidden="true">
+    <!-- The Two Symmetrical Decorative Gates (Start closed, swing open on entrance) -->
+    <div class="symmetrical-gates-wrapper" aria-hidden="true">
       <!-- Left Gate Leaf -->
-      <div class="gate-leaf gate-left">
-        <div class="gate-ironwork">
-          <div class="iron-arch"></div>
-          <div class="iron-bars"></div>
+      <div class="decorative-gate-leaf leaf-left">
+        <div class="gate-filigree">
+          <div class="filigree-crown"></div>
+          <div class="filigree-heart-emblem">♡</div>
+          <div class="filigree-bars"></div>
         </div>
       </div>
 
       <!-- Right Gate Leaf -->
-      <div class="gate-leaf gate-right">
-        <div class="gate-ironwork">
-          <div class="iron-arch"></div>
-          <div class="iron-bars"></div>
+      <div class="decorative-gate-leaf leaf-right">
+        <div class="gate-filigree">
+          <div class="filigree-crown"></div>
+          <div class="filigree-heart-emblem">♡</div>
+          <div class="filigree-bars"></div>
         </div>
       </div>
     </div>
 
-    <!-- Inner Sanctuary Revealed Behind Gates -->
-    <div class="garden-inner-sanctuary">
-      <h2 class="gate-heart-quote">"Every new beginning starts with a little hope ♡"</h2>
+    <!-- Central Sanctuary Message Card (strictly delayed until gates fully finish opening!) -->
+    <div class="gate-sanctuary-content">
       
-      <div class="gate-message-box">
-        <p><strong>{{ partner_name }}, ek baat aur kehni thi 😊</strong></p>
+      <div class="glass-card gate-inner-glass-card">
+        <h2 class="cursive-title gate-msg-heading">Swikriti, ek baat aur kehni thi 😊</h2>
+        
+        <div class="glowing-divider"></div>
 
-        <p>Please isse kisi pressure ya expectation ki tarah matt lena.</p>
+        <div class="gate-scrollable-body">
+          <p>Please isse kisi pressure ya expectation ki tarah matt lena.</p>
 
-        <p>I know humara relationship perfect nahi tha. Hum dono se mistakes hui, aur main maanta hoon ki meri taraf se bhi kaafi cheezein galat hui.</p>
+          <p>I know humara relationship perfect nahi tha. Hum dono se mistakes hui, aur main maanta hoon ki meri taraf se bhi kaafi cheezein galat hui.</p>
 
-        <p>Lekin mujhe aaj bhi lagta ki relationships perfect logon se nahi, balki do aise logon se bante hain jo ek doosre ko samajhne, accept karne aur improve karne ke liye ready hote hain.</p>
+          <p>Lekin mujhe aaj bhi lagta hai ki relationships perfect logon se nahi, balki do aise logon se bante hain jo ek doosre ko samajhne, accept karne aur improve karne ke liye ready hote hain.</p>
 
-        <p>{{ partner_name }}, I don't want us to go back to the same relationship we had before. Agar kabhi hum ek doosre ko another chance dein, toh main chahta hoon ki hum ek completely healthier relationship build karein.</p>
+          <p>Swikriti, I don't want us to go back to the same relationship we had before. Agar kabhi hum ek doosre ko another chance dein, toh main chahta hoon ki hum ek completely healthier relationship build karein.</p>
 
-        <p>Is baar tumhari choices, friendships, clothes, freedom aur individuality ko respect karna chahta hoon. Main apni insecurities ko tumhari restrictions nahi banaunga.</p>
+          <p>Is baar tumhari choices, friendships, clothes, freedom aur individuality ko respect karna chahta hoon. Main apni insecurities ko tumhari restrictions nahi banaunga.</p>
 
-        <p>Bas meri bhi ek expectation rahegi ki hum dono ek doosre ke saath honest rahein, uncomfortable situations ko hide karne ke bajaye communicate karein aur problems ko milkar solve karein.</p>
+          <p>Bas meri bhi ek expectation rahegi ki hum dono ek doosre ke saath honest rahein, uncomfortable situations ko hide karne ke bajaye communicate karein aur problems ko milkar solve karein.</p>
 
-        <p>I don't want to control you. I want to understand you better.</p>
+          <p>I don't want to control you. I want to understand you better.</p>
 
-        <p><strong>{{ partner_name }}, would you ever consider giving us one more chance? 🥺</strong></p>
+          <p class="gate-special-ask"><strong>Swikriti, would you ever consider giving us one more chance? 🥺</strong></p>
 
-        <p>Main tumse koi immediate answer nahi chahta</p>
+          <p>Main tumse koi immediate answer nahi chahta</p>
 
-        <p>Bas ek baar honestly poochna chahta tha because somewhere in my heart, I still believe ki hum dono chahein toh ek better relationship build kar sakte hain.😊🧿💝</p>
+          <p>Bas ek baar honestly poochna chahta tha because somewhere in my heart, I still believe ki hum dono chahein toh ek better relationship build kar sakte hain.😊🧿💝</p>
 
-        <p style="color: var(--sky-blue); font-weight: 600;">Smile😁❤️♾️</p>
-      </div>
+          <p class="gate-smile-signature">Smile😁❤️♾️</p>
+        </div>
 
-      <!-- Continue Navigation Button -->
-      <div class="button-group">
-        <a href="{{ url_for('beginning') }}" class="glow-btn">
-          Continue &rarr;
-        </a>
+        <!-- Button navigating forward to the surprise photograph and final question -->
+        <div class="button-group" style="margin-top: 1.6rem;">
+          <a href="{{ url_for('surprise') }}" class="glow-btn">
+            Step Through The Gate &rarr;
+          </a>
+        </div>
+
       </div>
 
     </div>
-
-    <!-- Pure CSS Toggle Latch (for user interaction) -->
-    <label for="gate-toggle" class="gate-latch-label" title="Click to open or close the garden gates">
-      <span>✨ Touch Gate Latch</span>
-    </label>
 
   </div>
 

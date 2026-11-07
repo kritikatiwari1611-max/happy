@@ -1,35 +1,31 @@
 {% extends "base.html" %}
 
-{% block title %}Hello {{ nickname }} ♡ | {{ site_title }}{% endblock %}
+{% block title %}Hey {{ partner_name }}... ♡ | {{ site_title }}{% endblock %}
 
 {% block content %}
-<section class="glass-card welcome-hero">
+<section class="glass-card welcome-card">
   
-  <!-- Glowing Moon Illustration -->
-  <div class="illustration-wrap">
-    <img src="{{ url_for('static', filename='images/moon.svg') }}" class="moon-banner" alt="Glowing Crescent Moon">
+  <!-- Subtle glowing blue heart icon -->
+  <div class="subtle-heart-glow" aria-hidden="true">
+    <span class="pulsing-heart-icon">♡</span>
   </div>
 
-  <h1 class="cursive-title">Hello {{ nickname }} ♡</h1>
-  <p class="subtitle">I want to say something...</p>
+  <h1 class="cursive-title welcome-heading">Hey {{ partner_name }}... ♡</h1>
+  
+  <p class="welcome-intro-text">
+    There's something I've been wanting to tell you.
+  </p>
+
+  <p class="welcome-sub-text">
+    Nothing complicated, just a few words from my heart.
+  </p>
 
   <div class="glowing-divider"></div>
 
-  <!-- Cute Blue Teddy Bear holding glowing heart -->
-  <div class="illustration-wrap">
-    <img src="{{ url_for('static', filename='images/teddy.svg') }}" class="teddy-banner" alt="Cute Blue Teddy Bear with Heart">
-  </div>
-
-  <span class="pulsing-heart-icon" aria-hidden="true">♡</span>
-
-  <p style="max-width: 520px; margin: 0.5rem auto 1.5rem auto; color: var(--soft-silver); font-size: 1.05rem;">
-    Under this calm midnight sky, I have put my sincere thoughts together for you. Please step forward with an open heart.
-  </p>
-
-  <!-- Button navigating to Apology Page -->
+  <!-- Single beautiful glowing button -->
   <div class="button-group">
-    <a href="{{ url_for('apology') }}" class="glow-btn">
-      Next Page &rarr;
+    <a href="{{ url_for('moment') }}" class="glow-btn pulse-button">
+      There's Something for You &rarr;
     </a>
   </div>
 

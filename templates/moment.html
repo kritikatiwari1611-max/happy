@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Before You Continue... ♡ | {{ site_title }}{% endblock %}
+
+{% block content %}
+<section class="glass-card moment-card">
+  
+  <h1 class="cursive-title">Before You Continue...</h1>
+  
+  <p class="moment-subtitle">
+    Take a little moment. There's no hurry.
+  </p>
+
+  <div class="glowing-divider"></div>
+
+  <!-- Animated Envelope with Glowing Blue Heart Seal -->
+  <div class="envelope-showcase" aria-hidden="true">
+    <div class="envelope-floating-wrapper">
+      <div class="envelope-body">
+        <div class="envelope-flap-fold"></div>
+        <div class="envelope-inner-paper">
+          <span>♡</span>
+        </div>
+        <div class="envelope-heart-wax">♡</div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size: 0.98rem; color: var(--soft-silver); margin: 1.2rem auto; max-width: 440px;">
+    Whenever you feel ready and comfortable, open it up.
+  </p>
+
+  <!-- Button to open the letter -->
+  <div class="button-group">
+    <a href="{{ url_for('letter') }}" class="glow-btn">
+      Open My Letter ♡
+    </a>
+  </div>
+
+</section>
+{% endblock %}

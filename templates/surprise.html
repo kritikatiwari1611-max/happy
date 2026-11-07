@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Our Memories & A Little Hope ♡ | {{ site_title }}{% endblock %}
+
+{% block content %}
+<section class="glass-card surprise-page-card">
+
+  <!-- THE SURPRISE PHOTOGRAPH (Revealed only here at the final chapter) -->
+  <div class="photograph-section">
+    <div class="polaroid-wrapper">
+      <div class="polaroid-frame-styled">
+        <div class="polaroid-media-box">
+          <img src="{{ url_for('static', filename='images/our_photo.jpg') }}" 
+               alt="Some memories will always be special ♡" 
+               class="polaroid-actual-img"
+               onerror="this.src='{{ url_for('static', filename='images/memory_silhouette.svg') }}'">
+        </div>
+        <p class="polaroid-handwritten-caption">Some memories will always be special ♡</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="glowing-divider"></div>
+
+  <!-- FINAL SECOND-CHANCE QUESTION -->
+  <div class="final-question-section">
+    
+    <h1 class="cursive-title question-main-title">
+      Would you ever consider giving us one more chance? 🥺
+    </h1>
+
+    <p class="question-no-pressure-sub">
+      There's no pressure to answer immediately. I just wanted to tell you honestly how I feel.
+    </p>
+
+    <!-- If user already submitted a response -->
+    {% if saved or latest_response %}
+      <div class="saved-acknowledgment-box">
+        <p style="color: var(--sky-blue); font-weight: 600;">
+          Your choice was saved with care: "{{ latest_response.choice if latest_response else 'Thank you' }}" ♡
+        </p>
+        <p style="font-size: 0.9rem; color: var(--soft-silver); margin-top: 0.3rem;">
+          Take all the time in the world. Whatever you decide, I will always respect you.
+        </p>
+      </div>
+    {% endif %}
+
+    <!-- Pure HTML POST Form (Strictly No JS) -->
+    <form action="{{ url_for('save_response') }}" method="POST" class="second-chance-form">
+      <div class="button-group">
+        
+        <!-- Choice 1: Maybe We Can Try Again -->
+        <button type="submit" name="choice" value="Maybe We Can Try Again ♡" class="glow-btn">
+          Maybe We Can Try Again ♡
+        </button>
+
+        <!-- Choice 2: I Need More Time -->
+        <button type="submit" name="choice" value="I Need More Time" class="glow-btn glow-btn-secondary">
+          I Need More Time
+        </button>
+
+      </div>
+    </form>
+
+    <div style="margin-top: 2.2rem;">
+      <a href="{{ url_for('final') }}" style="color: var(--sky-blue); font-size: 0.95rem; text-decoration: underline;">
+        A quiet thank you note &rarr;
+      </a>
+    </div>
+
+  </div>
+
+</section>
+{% endblock %}

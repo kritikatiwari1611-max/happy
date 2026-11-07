@@ -10,14 +10,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Pure CSS Stylesheet (Strict Blue Theme, No JS) -->
+  <!-- Pure CSS Stylesheet (Strict Blue Theme, Zero JS) -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   {% block extra_head %}{% endblock %}
 </head>
 <body>
 
-  <!-- Atmospheric Background: Stars, Clouds, Floating Hearts & Butterflies -->
+  <!-- Atmospheric Background: Corner Moon, Stars, Clouds, Floating Hearts, Flowers & Butterflies -->
   <div class="sky-ambiance" aria-hidden="true">
+    <!-- Glowing moon in the corner -->
+    <img src="{{ url_for('static', filename='images/moon.svg') }}" class="corner-moon" alt="">
+
+    <!-- Twinkling stars -->
     <div class="star"></div>
     <div class="star"></div>
     <div class="star"></div>
@@ -29,16 +33,23 @@
     <div class="star"></div>
     <div class="star"></div>
     
+    <!-- Floating soft clouds -->
     <div class="floating-cloud cloud-1"></div>
     <div class="floating-cloud cloud-2"></div>
     
+    <!-- Floating gentle blue hearts -->
     <div class="floating-heart heart-1">♡</div>
     <div class="floating-heart heart-2">♡</div>
     <div class="floating-heart heart-3">♡</div>
     <div class="floating-heart heart-4">♡</div>
 
+    <!-- Floating blue butterflies -->
     <img src="{{ url_for('static', filename='images/butterfly.svg') }}" class="ambient-butterfly butterfly-a" alt="">
     <img src="{{ url_for('static', filename='images/butterfly.svg') }}" class="ambient-butterfly butterfly-b" alt="">
+
+    <!-- Glowing blue flowers in the bottom corners -->
+    <img src="{{ url_for('static', filename='images/blue_roses.svg') }}" class="corner-flowers flowers-left" alt="">
+    <img src="{{ url_for('static', filename='images/blue_roses.svg') }}" class="corner-flowers flowers-right" alt="">
   </div>
 
   <!-- Page Content Container -->
